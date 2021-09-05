@@ -38,6 +38,13 @@ const StandardMembership = function(name) {
 const members = [];
 const factory = new memberFactory();
 
-members.push(factory.createMember('Pat P', simple));
+members.push(factory.createMember('Pat P', 'simple'));
+members.push(factory.createMember('Pat D', 'super'));
+members.push(factory.createMember('Pat J', 'simple'));
+members.push(factory.createMember('Pat S', 'standard'));
 
 console.log(members);
+
+members.forEach(function(member) {
+    member.define();
+});
