@@ -19,3 +19,21 @@ function memberFactory() {
     return member;
   }
 }
+
+const SimpleMembership = function(name) {
+  this.name = name;
+  this.cost = '$5';
+}
+
+const SimpleMembership = function(name) {
+  this.name = name;
+  this.cost = '$5';
+}
+
+  const SimpleMembership = function(name) {
+  this.name = name;
+  this.cost = '$5';
+}
+
+const Simplemembership: (name: )
+}
