@@ -25,15 +25,19 @@ const SimpleMembership = function(name) {
   this.cost = '$5';
 }
 
-const SimpleMembership = function(name) {
+const StandardMembership = function(name) {
   this.name = name;
-  this.cost = '$5';
+  this.cost = '$15';
 }
 
-  const SimpleMembership = function(name) {
+  const SuperMembership = function(name) {
   this.name = name;
-  this.cost = '$5';
+  this.cost = '$25';
 }
 
-const Simplemembership: (name: )
-}
+const members = [];
+const factory = new memberFactory();
+
+members.push(factory.createMember('Pat P', simple));
+
+console.log(members);
