@@ -1,50 +1,52 @@
-function memberFactory() {
-  this.createMember = function(name, type) {
-    let member;
 
-    if(type === 'simple') {
-      member = new SimpleMembership(name);
-    } else if (type === 'standard') {
-      member = new StandardMembership(name);
-    } else if (type === 'super') {
-      member = new SuperMembership(name);
-    }
 
-    member.type = type;
+// function memberFactory() {
+//   this.createMember = function(name, type) {
+//     let member;
 
-    member.define = function() {
-      console.log(`${this.name} (${this.type}): ${this.cost}`);
-    }
+//     if(type === 'simple') {
+//       member = new SimpleMembership(name);
+//     } else if (type === 'standard') {
+//       member = new StandardMembership(name);
+//     } else if (type === 'super') {
+//       member = new SuperMembership(name);
+//     }
 
-    return member;
-  }
-}
+//     member.type = type;
 
-const SimpleMembership = function(name) {
-  this.name = name;
-  this.cost = '$5';
-}
+//     member.define = function() {
+//       console.log(`${this.name} (${this.type}): ${this.cost}`);
+//     }
 
-const StandardMembership = function(name) {
-  this.name = name;
-  this.cost = '$15';
-}
+//     return member;
+//   }
+// }
 
-  const SuperMembership = function(name) {
-  this.name = name;
-  this.cost = '$25';
-}
+// const SimpleMembership = function(name) {
+//   this.name = name;
+//   this.cost = '$5';
+// }
 
-const members = [];
-const factory = new memberFactory();
+// const StandardMembership = function(name) {
+//   this.name = name;
+//   this.cost = '$15';
+// }
 
-members.push(factory.createMember('Pat P', 'simple'));
-members.push(factory.createMember('Pat D', 'super'));
-members.push(factory.createMember('Pat J', 'simple'));
-members.push(factory.createMember('Pat S', 'standard'));
+//   const SuperMembership = function(name) {
+//   this.name = name;
+//   this.cost = '$25';
+// }
 
-console.log(members);
+// const members = [];
+// const factory = new memberFactory();
 
-members.forEach(function(member) {
-    member.define();
-});
+// members.push(factory.createMember('Pat P', 'simple'));
+// members.push(factory.createMember('Pat D', 'super'));
+// members.push(factory.createMember('Pat J', 'simple'));
+// members.push(factory.createMember('Pat S', 'standard'));
+
+// // console.log(members);
+
+// members.forEach(function(member) {
+//     member.define();
+// });
