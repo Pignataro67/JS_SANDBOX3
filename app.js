@@ -23,26 +23,6 @@ EventObserver.prototype = {
   }
 }
 
-const click = new EventObserver();
-
-// Event Listeners
-document.querySelector('.sub-ms').addEventListener('click', function() {
-  click.subscribe(getCurMilliseconds);
-});
-
-document.querySelector('.unsub-ms').addEventListener('click', function() {
-  click.unsubscribe(getCurMilliseconds);
-});
-
-document.querySelector('.fire').addEventListener('click', function() {
-  click.fire();
-});
-
-// Click Handler
-const getCurMilliseconds = function() {
-  console.log(`Current Milliseconds: ${new Date().getMilliseconds()}`);
-}
-
 // function memberFactory() {
 //   this.createMember = function(name, type) {
 //     let member;
