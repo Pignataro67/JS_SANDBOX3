@@ -7,6 +7,22 @@ class EventObserver {
     this.observers.push(fn);
     console.log(`You are now subscribed to ${fn.name}`);
   }
+  
+  unsubscribe(fn) {
+    // Fliter out from the list whatever matched the callback function. If there is no match, the callback gets to stay on the list. The filter returns a new list and reassigns the list of observers.
+    this.observers = this.observers.filter(function(item) {
+      if(item !== fn) {
+        return item;
+      }
+    });
+    console.log(`You are now unsubscribed from ${fn.name}`);
+  }
+
+  fire() {
+    this.observers.forEach(function(item) {
+      item.call();
+    });
+  }
 }
     
 const click = new EventObserver();
