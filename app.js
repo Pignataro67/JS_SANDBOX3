@@ -48,7 +48,9 @@ chatroom.register(terri);
 chatroom.register(xander);
 chatroom.register(kenzie);
 
-
+pat.send('Hello Terri', terri);
+terri.send('Hello Pat, you are a good dev!', pat);
+xander.send('Hello Everyone!!!')
 
 // function EventObserver() {
 //   this.observers = [];
