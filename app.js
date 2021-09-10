@@ -14,7 +14,19 @@ User.prototype = {
 
 const Chatroom = function() {
   let users = {}; // list of users
+
+  return {
+    register: function(user) {
+      users[user.name] = user;
+      user.chatroom = this;
+    },
+    send: function() {
+      
+    }
+  }
 }
+
+
 
 // function EventObserver() {
 //   this.observers = [];
