@@ -26,13 +26,27 @@ const Chatroom = function() {
         to.receive(message, from);
       } else {
         // Mass message
-        for(key in users[key] !== from) {
-          users[key].receive(message, from);
+        for(key in users) {
+          if(users[key] !== from) {
+            users[key].receive(message, from);
+          }
         }
       }
     }
   }
 }
+
+const pat = new User('Pat');
+const terri = new User('Terri');
+const xander = new User('Xander');
+const kenzie = new User('Kenzie');
+
+const chatroom = new Chatroom();
+
+chatroom.register(pat);
+chatroom.register(terri);
+chatroom.register(xander);
+chatroom.register(kenzie);
 
 
 
