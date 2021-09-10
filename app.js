@@ -20,8 +20,16 @@ const Chatroom = function() {
       users[user.name] = user;
       user.chatroom = this;
     },
-    send: function() {
-      
+    send: function(message, from, to) {
+      if(to) { 
+        // Single user message
+        to.receive(message, from);
+      } else {
+        // Mass message
+        for(key in users[key] !== from) {
+          users[key].receive(message, from);
+        }
+      }
     }
   }
 }
