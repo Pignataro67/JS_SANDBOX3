@@ -1,56 +1,71 @@
-const User = function(name) {
-  this.name = name;
-  this.chatroom = null;
-}
+const PageState = function() {
+  let currentState = new homeState(this);
 
-User.prototype = {
-  send: function(message, to) {
-    this.chatroom.send(message, this, to);
-  },
-  receive: function(message) {
-    console.log(`${from.name} to ${this.name}: ${message}`);
+  this.init = function() {
+    this.change(new homeState);
   }
-}
 
-const Chatroom = function() {
-  let users = {}; // list of users
-
-  return {
-    register: function(user) {
-      users[user.name] = user;
-      user.chatroom = this;
-    },
-    send: function(message, from, to) {
-      if(to) { 
-        // Single user message
-        to.receive(message, from);
-      } else {
-        // Mass message
-        for(key in users) {
-          if(users[key] !== from) {
-            users[key].receive(message, from);
-          }
-        }
-      }
-    }
+  this.change = function(state) {
+    currentState = state;
   }
-}
+};
 
-const pat = new User('Pat');
-const terri = new User('Terri');
-const xander = new User('Xander');
-const kenzie = new User('Kenzie');
 
-const chatroom = new Chatroom();
+// ******************************************
 
-chatroom.register(pat);
-chatroom.register(terri);
-chatroom.register(xander);
-chatroom.register(kenzie);
+// const User = function(name) {
+//   this.name = name;
+//   this.chatroom = null;
+// }
 
-pat.send('Hello Terri', terri);
-terri.send('Hello Pat, you are a good dev!', pat);
-xander.send('Hello Everyone!!!')
+// User.prototype = {
+//   send: function(message, to) {
+//     this.chatroom.send(message, this, to);
+//   },
+//   receive: function(message) {
+//     console.log(`${from.name} to ${this.name}: ${message}`);
+//   }
+// }
+
+// const Chatroom = function() {
+//   let users = {}; // list of users
+
+//   return {
+//     register: function(user) {
+//       users[user.name] = user;
+//       user.chatroom = this;
+//     },
+//     send: function(message, from, to) {
+//       if(to) { 
+//         // Single user message
+//         to.receive(message, from);
+//       } else {
+//         // Mass message
+//         for(key in users) {
+//           if(users[key] !== from) {
+//             users[key].receive(message, from);
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// const pat = new User('Pat');
+// const terri = new User('Terri');
+// const xander = new User('Xander');
+// const kenzie = new User('Kenzie');
+
+// const chatroom = new Chatroom();
+
+// chatroom.register(pat);
+// chatroom.register(terri);
+// chatroom.register(xander);
+// chatroom.register(kenzie);
+
+// pat.send('Hello Terri', terri);
+// terri.send('Hello Pat, you are a good dev!', pat);
+// xander.send('Hello Everyone!!!')
 
 // function EventObserver() {
 //   this.observers = [];
