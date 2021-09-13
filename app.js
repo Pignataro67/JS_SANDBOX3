@@ -14,18 +14,33 @@ const PageState = function() {
 const homeState = function(page) {
   document.querySelector('#heading').textContent =  null;
   document.querySelector('#heading').innerHTML = `
-  <div class="jumbotron">
-  <h1 class="display-3">Hello, World!</h1>
-  <p class="lead">This is simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  <hr> class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn More</a>
-  </p>
-</div>
-`;
+    <div class="jumbotron">
+    <h1 class="display-3">Hello, World!</h1>
+    <p class="lead">This is simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <hr> class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn More</a>
+    </p>
+  </div>
+  `;
 };
 
+// About State
+const aboutState = function(page) {
+  document.querySelector('#heading').textContent = 'About Us';
+  document.querySelector('#content').innerHTML = `
+    <p>this is the about page</p>
+  `;
+}
+
+// Contact State
+const contactState = function(page) {
+  document.querySelector('#heading').textContent = 'Contact Us';
+  document.querySelector('#content').innerHTML = `
+    
+  `;
+}
 
 // ******************************************
 
