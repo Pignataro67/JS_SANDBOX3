@@ -10,6 +10,12 @@ const PageState = function() {
   }
 };
 
+// Home State
+const homeState = function(page) {
+  document.querySelector('#heading').textContent =  null;
+  document.querySelector('#heading').innerHTML
+}
+
 
 // ******************************************
 
