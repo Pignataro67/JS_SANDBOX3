@@ -69,3 +69,10 @@ home.addEventListener('click', (e) => {
 
   e.preventDefault();
 });
+
+// About
+home.addEventListener('click', (e) => {
+  page.change(new aboutState);
+
+  e.preventDefault();
+});
