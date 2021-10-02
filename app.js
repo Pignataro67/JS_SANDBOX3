@@ -76,3 +76,10 @@ home.addEventListener('click', (e) => {
 
   e.preventDefault();
 });
+
+// Contact
+contact.addEventListener('click', (e) => {
+  page.change(new contactState);
+
+  e.preventDefault();
+});
