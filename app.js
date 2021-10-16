@@ -38,7 +38,18 @@ const UICtrl = (function() {
 
   // Public Methods
   return {
+    populateItemList: function(items){
+      let html = '';
 
+      items.foreach(function(item) {
+        html += `<li class="collection-item" id="item-${item.id}">
+        <strong>${item.name}: </strong> <em>${item.calories} Calories</em>
+        <a href="#" class="secondary-content">
+          <i class="edit-item fa fa-pencil"></i>
+        </a>
+      </li>`
+      });
+    }
   }
 })();
 
@@ -50,13 +61,14 @@ const App = (function(ItemCtrl, UICtrl) {
 // Public Methods
   return {
     init: function() {
-      console.log('Initializing App...');
+      // Fetch items from data structure
       const items = ItmCTRL.getItems();
 
-      console.log(items);
+      // populate list with items
+      UICtrl.popultaeItemList(items);
     }
   }
-  // console.log(ItemCtrl.logData());
+  
 })(ItemCtrl, UICtrl);
 
 // Initialize App
