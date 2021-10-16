@@ -22,6 +22,9 @@ const ItemCtrl = (function() {
 
   // Public Methods
   return {
+    getItems: function() {
+      return data.items;
+    },
     logData: function() {
         return data;
     }
@@ -48,6 +51,9 @@ const App = (function(ItemCtrl, UICtrl) {
   return {
     init: function() {
       console.log('Initializing App...');
+      const items = ItmCTRL.getItems();
+
+      console.log(items);
     }
   }
   // console.log(ItemCtrl.logData());
