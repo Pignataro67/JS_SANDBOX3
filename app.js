@@ -38,7 +38,7 @@ const UICtrl = (function() {
   const UISelectors = {
     itemList: '#item-list'
   }
-  
+
   // Public Methods
   return {
     populateItemList: function(items){
@@ -54,7 +54,10 @@ const UICtrl = (function() {
       });
 
       // Insert list items
-      document.querySelector('#item-list').innerHTML = html;
+      document.querySelector(UISelectors.itemList).innerHTML = html;
+    },
+    getSelectors: function() {
+      return UISelectors;
     }
   }
 })();
@@ -63,8 +66,12 @@ const UICtrl = (function() {
 
 // App Controller
 const App = (function(ItemCtrl, UICtrl) {
+  // Load event Listeners
+  const loadEventListeners = function() {
 
-// Public Methods
+  }
+  
+  // Public Methods
   return {
     init: function() {
       // Fetch items from data structure
