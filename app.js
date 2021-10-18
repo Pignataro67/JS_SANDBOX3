@@ -36,7 +36,8 @@ const ItemCtrl = (function() {
 // UI Controller
 const UICtrl = (function() {
   const UISelectors = {
-    itemList: '#item-list'
+    itemList: '#item-list',
+    addBtn: '.add-btn'
   }
 
   // Public Methods
@@ -68,9 +69,19 @@ const UICtrl = (function() {
 const App = (function(ItemCtrl, UICtrl) {
   // Load event Listeners
   const loadEventListeners = function() {
+    const UISelectors = UICtrl.getSelectors();
 
+    //Add Item Event
+    document.querySelector(UISelectors.addBtn).addEventListener('click', itemAddSubmit);
   }
   
+  // Add item submit
+  const itemAddSubmit = function(e) {
+    console.log('Add');
+
+    e.preventDefault();
+  }
+
   // Public Methods
   return {
     init: function() {
