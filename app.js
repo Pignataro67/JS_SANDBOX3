@@ -57,6 +57,12 @@ const UICtrl = (function() {
       // Insert list items
       document.querySelector(UISelectors.itemList).innerHTML = html;
     },
+    getItemInput: function(){
+      return {
+        name:'',
+        calories:''
+      }
+    },
     getSelectors: function() {
       return UISelectors;
     }
@@ -77,7 +83,9 @@ const App = (function(ItemCtrl, UICtrl) {
   
   // Add item submit
   const itemAddSubmit = function(e) {
-    console.log('Add');
+    // console.log('Add');
+    // Get form input from UI controller
+    const input = UICtrl.getItemInput();
 
     e.preventDefault();
   }
@@ -90,6 +98,9 @@ const App = (function(ItemCtrl, UICtrl) {
 
       // populate list with items
       UICtrl.popultaeItemList(items);
+
+      // Load event listeners();
+      loadEventListeners();
     }
   }
   
